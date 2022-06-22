@@ -1,5 +1,25 @@
-function rungame() {
+//Wait for DOM to finish loading before running the game
+//Get button elements and add event listeners to them
 
+document.addEventListener('DOMContentLoaded', function() {
+    let buttons = document.getElementsByTagName('button');
+
+    for (let button of buttons) {
+        button.addEventListener('click', function() {
+            if (this.getAttribute('data-type') === 'submit') {
+                alert('You Clciked Submit!');
+            } else {
+                let gameType = this.getAttribute('data-type');
+                alert(`You clicked ${gameType}`)
+            }
+        })
+    }
+})
+
+function rungame() {
+    //Create random numbers between 1-25 
+    let num1 = Math.floor(Math.random() * 25 + 1)
+    let num2 = Math.floor(Math.random() * 25 + 1)
 }
 
 function checkAnswer() {
